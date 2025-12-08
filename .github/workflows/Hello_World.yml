@@ -1,36 +1,13 @@
-steps:
-
-  - uses: actions/checkout@v4
- 
-  - name: Run PowerShell command
-
-    shell: powershell
-
-    run: echo "Hello from self-hosted runner"
-
- 
-name: Self Hosted Test
+name: Self-Hosted Runner Test
  
 on:
-
   workflow_dispatch:
  
 jobs:
-
   build:
-
     runs-on: [self-hosted, windows]
-
     steps:
-
-      - name: Test runner
-
-        shell: powershell
-
-        run: |
-
-          echo "Runner is working"
-
-          hostname
-
+      - uses: actions/checkout@v4
  
+      - name: Say Hello
+        run: echo "Hello from self-hosted runner!"
